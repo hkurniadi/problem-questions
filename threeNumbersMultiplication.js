@@ -19,38 +19,4 @@ function f(number) {
   };
 }
 
-// f(2)(3)(4)();
-
-// let multiply = f(2);
-// multiply(3)
-// multiply(4)
-
-// function counter() {
-//   var count = 0;
-//   return function() {
-//       console.log(count++);
-//   }
-// }
-// var count = counter();
-// // console.log(typeof(count));
-// count();
-// count();
-// count();
-
-function curry(fn) {
-  const args = []
-  return function inner(arg) {
-    if(args.length === fn.length) return fn(...args)
-    args.push(arg)
-    return inner
-  }
-}
-
-function add(a, b) {
-  return a + b
-}
-
-console.log(add.length);
-
-// const curriedAdd = curry(add)
-// console.log(curriedAdd(2)(3)()) // 5
+f(2)(3)(4);
